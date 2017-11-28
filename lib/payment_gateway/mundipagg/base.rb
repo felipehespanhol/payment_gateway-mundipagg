@@ -1,3 +1,5 @@
+require 'http'
+
 class PaymentGateway::Mundipagg::Base
   class GatewayError < StandardError; end
 
@@ -7,8 +9,8 @@ class PaymentGateway::Mundipagg::Base
 
   def request(method, url, options={ headers: {}, body: {}, params: {} })
     headers = { 'Content-Type' => 'application/json' }
-    headers.merge!(options[:headers]) if options[:headers].present?
-    response = HTTP.basic_auth(user: PaymentGateway::Mundipagg.access_key, pass: '').
+    headers.merge!(options[:headers]) unless options[:headers].nil?
+    response = HTTP.basic_auth(user: PaymentGateway::Mundipagg.configuration.access_key, pass: '').
                     headers('Content-Type' => 'application/json').
                     send(method, url, json: options[:body], params: options[:params])
     if response.status.eql?(200)

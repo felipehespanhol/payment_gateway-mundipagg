@@ -1,4 +1,4 @@
-module PaymentGateway::Mundipagg do
+module PaymentGateway::Mundipagg
   class << self
     attr_accessor :configuration
   end
