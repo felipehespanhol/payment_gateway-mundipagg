@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Felipe G. Hespanhol']
 
   s.require_paths = ["lib"]
-  s.required_ruby_version = '>= 2.4.0'
+  s.required_ruby_version = '>= 2.3.4'
 
   s.add_dependency("http", "~> 2.2", ">= 2.2.2")
 
