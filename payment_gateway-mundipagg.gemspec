@@ -14,5 +14,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency("http", "~> 2.2", ">= 2.2.2")
 
-  s.add_development_dependency("rspec", "3.6.0")
+  s.add_development_dependency("rspec", "~>3.6")
+  s.add_development_dependency("webmock", "~>3.1")
+  s.add_development_dependency("pry-byebug")
 end

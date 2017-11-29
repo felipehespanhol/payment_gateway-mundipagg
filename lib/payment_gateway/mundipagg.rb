@@ -1,18 +1,23 @@
-module PaymentGateway::Mundipagg
-  class << self
-    attr_accessor :configuration
-  end
+module PaymentGateway
+  module Mundipagg
+    class << self
+      attr_accessor :configuration
+    end
 
-  def self.configure
-    self.configuration ||= Configuration.new
-    yield(configuration)
-  end
+    def self.configure
+      yield(configuration)
+    end
 
-  class Configuration
-    attr_accessor :access_key
+    def self.configuration
+      @configuration ||= Configuration.new
+    end
 
-    def initialize
-      @access_key = nil
+    class Configuration
+      attr_accessor :access_key
+
+      def initialize
+        @access_key = nil
+      end
     end
   end
 end
