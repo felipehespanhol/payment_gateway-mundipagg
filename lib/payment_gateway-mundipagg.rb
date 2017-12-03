@@ -1,4 +1,3 @@
-require 'payment_gateway'
 require 'payment_gateway/mundipagg'
 require 'payment_gateway/mundipagg/base'
 require 'payment_gateway/mundipagg/plan'

@@ -13,7 +13,6 @@ module HelperMethods
   end
 
   def stub_mundipagg_request(gateway_class, method, request_method, request_url, request_body={})
-    self.config_access_key
     stub_request(request_method, request_url).
        with(
          body: request_body.to_json,

@@ -12,6 +12,10 @@ module PaymentGateway
       @configuration ||= Configuration.new
     end
 
+    def self.reset
+      @configuration = Configuration.new
+    end
+
     class Configuration
       attr_accessor :access_key
 
