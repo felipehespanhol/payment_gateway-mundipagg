@@ -35,7 +35,7 @@ All methods receives a hash as described in Mundipagg docs (https://docs.mundipa
 Methods:
 
 - list
-- create 
+- create
 - destroy
 
 ### Card
@@ -56,3 +56,12 @@ Methods:
 - create
 - create_from_plan
 - cancel
+
+### Order
+
+- list
+- create
+
+## License
+
+MIT License. Copyright 2017 Felipe G. Hespanhol
