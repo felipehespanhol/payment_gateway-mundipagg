@@ -21,7 +21,7 @@ module HelperMethods
            'Connection'    => 'close',
            'Content-Type'  => 'application/json',
            'Host'          => 'api.mundipagg.com',
-           'User-Agent'    => 'http.rb/2.2.2'
+           'User-Agent'    => 'http.rb/3.0.0'
          }
        ).
        to_return(
