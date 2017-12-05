@@ -1,5 +1,3 @@
-require 'credit_card_validations'
-
 module PaymentGateway
   module Mundipagg
     class Card < Base
