@@ -1,3 +1,5 @@
+require 'active_support/all'
+
 require 'payment_gateway/mundipagg'
 require 'payment_gateway/mundipagg/base'
 require 'payment_gateway/mundipagg/plan'

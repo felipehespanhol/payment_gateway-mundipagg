@@ -17,4 +17,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency("rspec", "~>3.6")
   s.add_development_dependency("webmock", "~>3.1")
   s.add_development_dependency("pry-byebug")
+  s.add_development_dependency("activesupport", ">=3.0")
+  s.add_development_dependency("credit_card_validations", "~>3.4")
 end
