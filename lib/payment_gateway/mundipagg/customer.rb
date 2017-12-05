@@ -34,7 +34,7 @@ module PaymentGateway
         {
           name:     customer_data[:name],
           email:    customer_data[:email],
-          type:     customer_data[:type],
+          type:     customer_data[:type] || 'individual',
           document: customer_data[:document],
           gender:   customer_data[:gender],
           phones: {
