@@ -59,9 +59,7 @@ module PaymentGateway
             state:        customer_data[:address][:state],
             country:      customer_data[:address][:country]
           },
-          metadata: {
-            id: customer_data[:id]
-          }
+          metadata: customer_data[:metadata] || {}
         }
       end
     end
