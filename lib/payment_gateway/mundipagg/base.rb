@@ -23,7 +23,7 @@ module PaymentGateway
                         headers('Content-Type' => 'application/json').
                         send(method, url, json: options[:body], params: options[:params])
         if response.status.eql?(200)
-          response.parse
+          response.parse.with_indifferent_access
         else
           error_message = "#{response.status} - #{response.parse['errors']}"
           raise GatewayError, error_message
