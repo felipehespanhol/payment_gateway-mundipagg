@@ -25,7 +25,7 @@ module PaymentGateway
         if response.status.eql?(200)
           response.parse.with_indifferent_access
         else
-          error_message = "#{response.status} - #{response.parse['errors']}"
+          error_message = "#{response.status} - #{response.parse['errors'] || response.parse['message']}"
           raise GatewayError, error_message
         end
       end

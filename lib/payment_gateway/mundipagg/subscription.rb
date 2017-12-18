@@ -14,12 +14,14 @@ module PaymentGateway
       end
 
       def create(subscription_data)
+        validate_credit_card_data(subscription_data)
         request(:post, mount_url, body: subscription_data)
       end
 
       # plan_id and payment_method are required
       def create_from_plan(subscription_data)
-        validate_subscription_data(subscription_data)
+        validate_plan_data(subscription_data)
+        validate_credit_card_data(subscription_data)
         request(:post, mount_url, body: subscription_data)
       end
 
@@ -35,16 +37,16 @@ module PaymentGateway
         "#{API_URL}/subscriptions" + relative_path
       end
 
-      def validate_subscription_data(subscription_data)
+      def validate_plan_data(subscription_data)
         subscription_data = subscription_data.with_indifferent_access
-        [
-          :plan_id,
-          :payment_method
-        ].each do |key|
-          raise "Missing #{key} in subscription data" if subscription_data[key].blank?
-        end
-        if subscription_data[:payment_method].eql?('credit_card') && subscription_data[:credit_card].blank?
-          raise "Missing credit card data"
+        raise "Missing plan_id in subscription data" if subscription_data[:plan_id].blank?
+      end
+
+      def validate_credit_card_data(subscription_data)
+        subscription_data = subscription_data.with_indifferent_access
+        if subscription_data[:payment_method].eql?('credit_card') &&
+            (subscription_data[:card].blank? && subscription_data[:card_id].blank?)
+          raise "Missing card data or card_id"
         end
       end
 
