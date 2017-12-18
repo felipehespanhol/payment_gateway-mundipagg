@@ -10,7 +10,7 @@ module PaymentGateway
       end
 
       def any?
-        list.try(:any?)
+        list&.any?
       end
 
       # {
