@@ -39,25 +39,25 @@ module PaymentGateway
           gender:   customer_data[:gender],
           phones: {
             home_phone: {
-              country_code: customer_data[:phones][:home_phone][:country_code],
-              area_code:    customer_data[:phones][:home_phone][:area_code],
-              number:       customer_data[:phones][:home_phone][:number]
+              country_code: customer_data.dig(:phones, :home_phone, :country_code),
+              area_code:    customer_data.dig(:phones, :home_phone, :area_code),
+              number:       customer_data.dig(:phones, :home_phone, :number)
             },
             mobile_phone: {
-              country_code: customer_data[:phones][:mobile_phone][:country_code],
-              area_code:    customer_data[:phones][:mobile_phone][:area_code],
-              number:       customer_data[:phones][:mobile_phone][:number]
+              country_code: customer_data.dig(:phones, :mobile_phone, :country_code),
+              area_code:    customer_data.dig(:phones, :mobile_phone, :area_code),
+              number:       customer_data.dig(:phones, :mobile_phone, :number)
             }
           },
           address: {
-            street:       customer_data[:address][:street],
-            number:       customer_data[:address][:number],
-            complement:   customer_data[:address][:complement],
-            zip_code:     customer_data[:address][:zip_code],
-            neighborhood: customer_data[:address][:neighborhood],
-            city:         customer_data[:address][:city],
-            state:        customer_data[:address][:state],
-            country:      customer_data[:address][:country]
+            street:       customer_data.dig(:address, :street),
+            number:       customer_data.dig(:address, :number),
+            complement:   customer_data.dig(:address, :complement),
+            zip_code:     customer_data.dig(:address, :zip_code),
+            neighborhood: customer_data.dig(:address, :neighborhood),
+            city:         customer_data.dig(:address, :city),
+            state:        customer_data.dig(:address, :state),
+            country:      customer_data.dig(:address, :country)
           },
           metadata: customer_data[:metadata] || {}
         }
