@@ -18,6 +18,10 @@ module PaymentGateway
         request(:get, mount_url)
       end
 
+      def show(card_id)
+        request(:get, mount_url("/#{card_id}"))
+      end
+
       def any?
         list&.any?
       end
