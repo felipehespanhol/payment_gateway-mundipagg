@@ -1,4 +1,4 @@
-### 0.0.1 - 2017-11-28
+### 0.0.1 - 2018-01-24
 
-* Created services for subscription
+* Created first services for mundipagg
 
