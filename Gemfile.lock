@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    payment_gateway-mundipagg (0.0.1)
+    payment_gateway-mundipagg (0.0.3)
       activesupport (>= 3.0)
       credit_card_validations (~> 3.4)
       http (~> 3.0)
@@ -80,9 +80,9 @@ PLATFORMS
 
 DEPENDENCIES
   payment_gateway-mundipagg!
-  pry-byebug
+  pry-byebug (~> 3.5)
   rspec (~> 3.6)
   webmock (~> 3.1)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

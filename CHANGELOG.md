@@ -6,3 +6,6 @@
 
 * Fixed dependencies config in gemspec
 
+### 0.0.3 - 2018-01-25
+
+* Fixed gem packing
